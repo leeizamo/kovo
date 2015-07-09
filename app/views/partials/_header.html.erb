@@ -19,7 +19,9 @@
        <li> <%= link_to "about", about_path %></li>       
        <li> <%= link_to "projects", projects_path %></li> 
        <% if user_signed_in? %>   
-          <li> <%= link_to "Log out", destroy_user_session_path, method: :delete %> </li>   
+          <li> <%= link_to "Log out", destroy_user_session_path, method: :delete %> </li>  
+          <li> <%= link_to "Account Settings", edit_user_registration_path %> </li>  
+
        <% else %>
           <li> <%= link_to "Log in", user_session_path %> </li>   
        <% end %>
