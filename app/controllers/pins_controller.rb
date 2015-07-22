@@ -8,7 +8,7 @@ class PinsController < ApplicationController
     respond_with(@pins)
   end
 
-  def show
+  def show #or Read action
     respond_with(@pin)
   end
 

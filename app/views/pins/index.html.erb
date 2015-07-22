@@ -10,12 +10,24 @@
 
   <tbody>
     <% @pins.each do |pin| %>
-      <tr>
+    
+        <ul id="ull" >
+        <li class="item"><%= pin.description %></li>
+        <li class="action"><%= link_to 'Show', pin %></li>
+        <li class="action"><%= link_to 'Edit', edit_pin_path(pin) %></li>
+        <li class="action"><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+      
+    </br>
+
+     <tr>
         <td><%= pin.description %></td>
         <td><%= link_to 'Show', pin %></td>
         <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
         <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+
+
     <% end %>
   </tbody>
 </table>
@@ -23,3 +35,14 @@
 <br>
 
 <%= link_to 'New Pin', new_pin_path %>
+
+<style >
+  #ull li, .item{
+    display: inline-block;
+    width: 25%;
+    background-color: yellow;
+  }
+  #ull .action{
+    width: 44px;
+  }
+</style>
