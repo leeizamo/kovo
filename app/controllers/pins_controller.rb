@@ -47,7 +47,7 @@ class PinsController < ApplicationController
       @pin = current_user.pins.find_by(id: params[:id])
       redirect_to pins_path, alert: "Ooh, sorry! Permission denied." if @pin.nil?
     end
-
+    
     def pin_params
       params.require(:pin).permit(:description)
     end
