@@ -4,7 +4,10 @@
 Rails.application.configure do
 
   #Paperclip required to avoid error: "Paperclip::Errors::NotIdentifiedByImageMagickError?"
-  Paperclip.options[:command_path] = "/usr/local/bin/"
+  Paperclip.options[:command_path] = "/usr/bin/"
+  Paperclip.options[:command_path] = "/usr/bin/convert"
+
+
 
   # Settings specified here will take precedence over those in config/application.rb.
 
